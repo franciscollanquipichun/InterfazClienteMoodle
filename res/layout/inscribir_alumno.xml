@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical" android:padding="5dip">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_alumno"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="@color/texto"/>
+
+        <Spinner
+            android:id="@+id/inscribir_alumno_sp_alumno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_curso"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="@color/texto"/>
+
+        <Spinner
+            android:id="@+id/inscribir_alumno_sp_curso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="5dip">
+
+        <Button
+            android:id="@+id/inscribir_alumno_btn_inscribir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_inscribir_alumno" />
+
+        <Button
+            android:id="@+id/inscribir_alumno_btn_volver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_volver" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/inscribir_alumno_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_inscribir_alumno" />
+
+</LinearLayout>

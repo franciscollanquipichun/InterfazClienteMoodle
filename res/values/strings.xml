@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, InterfazClienteMoodleActivity!</string>
+    <string name="app_name">Interfaz Cliente Moodle</string>
+    <color name="fondo">#ffffff</color>
+    <string name="registrar_alumno">Registrar un nuevo Alumno</string>
+    <string name="inscribir_curso_alumno">Inscribir un Alumno a un Curso</string>
+    <string name="ver_cursos_alumno">Ver los Cursos de un Alumno</string>
+    <string name="ver_recursos_curso">Ver los Recursos de un Curso</string>
+    <color name="texto">#555555</color>
+    <color name="titulo">#000000</color>
+    <string name="btn_registrar_alumno">Registrar Alumno</string>
+    <string name="btn_inscribir_alumno">Inscribir Alumno</string>
+    <string name="btn_ver_cursos">Ver Cursos</string>
+    <string name="btn_ver_recursos">Ver Recursos</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="tv_nombre">Nombre</string>
+    <string name="tv_rut">Rut</string>
+    <string name="tv_alumno">Alumno</string>
+    <string name="tv_curso">Curso</string>
+    <string name="tv_volver">Volver</string>
+    <string name="tv_listaDeCursos">Lista de cursos</string>
+    <string name="tv_usr">Usuario</string>
+    <string name="tv_pws">Contraseña</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="info"></string>
+    <color name="textoError">#cc0000</color>
+    <color name="textoSuccessful">#00aa00</color>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="D:/APLICACIONES/eclipse/plugins/javax.xml.soap_1.2.0.v201005080501/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="D:/APLICACIONES/eclipse/plugins/javax.wsdl_1.6.2.v201012040545.jar"/>
+	<classpathentry kind="lib" path="D:/APLICACIONES/eclipse/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar"/>
+	<classpathentry kind="lib" path="libs/ksoap2-android-assembly-2.5.2-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="libs/moodlews_ksoap2_1.8.5.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

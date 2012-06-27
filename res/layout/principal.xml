@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:background="@color/fondo">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip"
+        android:text="@string/app_name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/titulo" />
+
+    <LinearLayout
+        android:id="@+id/registrar_alumno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingBottom="10dip" android:paddingLeft="5dip" android:paddingRight="5dip">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registrar_alumno"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="@color/texto"/>
+
+        <Button
+            android:id="@+id/btn_registrar_alumno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_registrar_alumno" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/inscribir_curso_alumno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingBottom="10dip" android:paddingLeft="5dip" android:paddingRight="5dip">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inscribir_curso_alumno"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="@color/texto"/>
+
+        <Button
+            android:id="@+id/btn_inscribir_alumno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_inscribir_alumno" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ver_cursos_alumno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingBottom="10dip" android:paddingLeft="5dip" android:paddingRight="5dip">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ver_cursos_alumno"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="@color/texto"/>
+
+        <Button
+            android:id="@+id/btn_ver_cursos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_ver_cursos" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ver_recursos_curso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingLeft="5dip" android:paddingRight="5dip">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ver_recursos_curso"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="@color/texto"/>
+
+        <Button
+            android:id="@+id/btn_ver_recursos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_ver_recursos" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/info" />
+
+</LinearLayout>
