@@ -5,6 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="10" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -18,6 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="InscribirAlumno"></activity>
+        <activity android:name="Principal"></activity>
+        <activity android:name="RegistrarAlumno"></activity>
+        <activity android:name="VerCursos"></activity>
+        <activity android:name="VerRecursos"></activity>
     </application>
 
 </manifest>

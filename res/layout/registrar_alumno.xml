@@ -64,12 +64,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_inscribir_alumno" />
-
-        <Button
-            android:id="@+id/btn_registrarAlumno_volver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_volver" />
 
     </LinearLayout>
 

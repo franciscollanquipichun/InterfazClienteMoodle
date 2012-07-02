@@ -36,12 +36,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_ver_recursos" />
-
-        <Button
-            android:id="@+id/btn_verRecursos_volver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_volver" />
 
     </LinearLayout>
 

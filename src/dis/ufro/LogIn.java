@@ -1,6 +1,9 @@
 package dis.ufro;
 
+import java.util.Arrays;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,12 +11,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import net.patrickpollet.moodlews.core.*;
 import org.ksoap2.transport.HttpTransportSE;
-import net.patrickpollet.moodlewsold.core.CourseRecord;
-import net.patrickpollet.moodlewsold.core.GetCoursesReturn;
-import net.patrickpollet.moodlewsold.core.LoginReturn;
-import net.patrickpollet.moodlewsold.core.MoodleWSBindingStub;
+
 
 public class LogIn extends Activity {
 	
@@ -21,15 +23,9 @@ public class LogIn extends Activity {
 	private EditText et_usr;
 	private EditText et_pwd;
 	private TextView tv_info;
+	private String Sessionkey = null;
+	private static final int REQUEST_CODE = 10;
 	//login
-	private final String MOODLE_URL = "http://10.0.2.2/moodle/";
-	private final String LOGIN = "admin";
-	private final String PWD = "123456Asd#";
-	private final boolean WS_DEBUG = false;
-	private final String NAMESPACE = MOODLE_URL + "wspp/wsdl/";
-	private final String TAG = "moodlews@android";
-	private final String URL = MOODLE_URL + "wspp/service_pp.php";
-	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,41 +35,41 @@ public class LogIn extends Activity {
         et_usr = (EditText)findViewById(R.id.et_usr);
         et_pwd = (EditText)findViewById(R.id.et_pwd);
         tv_info =(TextView)findViewById(R.id.tv_info);
-        
         btn_Login = (Button) findViewById(R.id.btn_login);
-        btn_Login.setOnClickListener(new OnClickListener() {
-		
+        //Acción del boton de login btn_Login
+        btn_Login.setOnClickListener(new OnClickListener() {			
 			public void onClick(View v) {
-				//LOGIN = et_usr.getText().toString();
-				//PWD = et_pwd.getText().toString();
-				
-				tv_info.setText("usr: "+LOGIN+" pass: "+PWD);
-
-				autentificar(LOGIN, PWD);
-				
-				//la siguiente linea es solo de prueba
-				//setContentView(R.layout.principal);
+				Constantes.LOGIN=et_usr.getText().toString(); 
+				Constantes.PWD=et_pwd.getText().toString();
+				tv_info.setText(Constantes.MOODLE_URL);
+				if(validarLogin()==true){
+					Toast.makeText(getApplicationContext(), "login correcto", Toast.LENGTH_LONG).show();
+					
+					Intent i = new Intent(LogIn.this, Principal.class);
+					i.putExtra("SecionKey",Sessionkey);
+					startActivity(i);
+				}
+				else{
+					Toast.makeText(getApplicationContext(), "error de login", Toast.LENGTH_LONG).show();
+				}
 			}
-		});		
+		});
     }
- /**
-  *    
-  * @param login
-  * @param pwd
-  * @return
-  */
-    private void autentificar(String login, String pwd){
-    	MoodleWSBindingStub moodle=new MoodleWSBindingStub(this.URL,this.NAMESPACE,this.WS_DEBUG);
-    	LoginReturn lr = moodle.login(LOGIN, PWD);
-    	tv_info.setText(URL+"\n"+NAMESPACE+"\n usr: "+LOGIN+" pass: "+PWD+" lr: "+lr);
-		if (lr != null) {			
-			int me = moodle.get_my_id(lr.getClient(),lr.getSessionkey());
-			this.logInfo("get_my_id",""+me);			
-			
-			GetCoursesReturn crs=moodle.get_my_courses(lr.getClient(),lr.getSessionkey(),me,"");
-			for (CourseRecord c : crs.getCourses())
-				this.logInfo("get_my_courses",c);
-			moodle.logout(lr.getClient(),lr.getSessionkey());			
+/**
+ * Valida el usuario y contraseña ingresados
+ * @return boolean
+ */
+    private boolean validarLogin(){
+    	Mdl_soapserverBindingStub moodle = new Mdl_soapserverBindingStub(Constantes.URL,Constantes.NAMESPACE,Constantes.WS_DEBUG);
+		
+		LoginReturn lr = moodle.login(Constantes.LOGIN, Constantes.PWD);
+		if (lr != null) {
+			Sessionkey = lr.getSessionkey();
+			this.logInfo("get_my_id",""+Sessionkey);
+			return true;
+		}
+		else{
+			return false;
 		}
     }    
 /**
@@ -84,17 +80,16 @@ public class LogIn extends Activity {
  */
 	private void logError(HttpTransportSE androidHttpTransport, Exception e) {
 		// give a null pointer exception if debug is off in transport
-		if (WS_DEBUG) {
-			Log.e(TAG, androidHttpTransport.requestDump.toString());
-			Log.e(TAG, "lng="
+		if (Constantes.WS_DEBUG) {
+			Log.e(Constantes.TAG, androidHttpTransport.requestDump.toString());
+			Log.e(Constantes.TAG, "lng="
 					+ (androidHttpTransport.requestDump.toString().length()));
-			Log.e(TAG, androidHttpTransport.responseDump.toString());
-			Log.e(TAG, "lng="
+			Log.e(Constantes.TAG, androidHttpTransport.responseDump.toString());
+			Log.e(Constantes.TAG, "lng="
 					+ (androidHttpTransport.responseDump.toString().length()));
 		}
 		e.printStackTrace();
 	}
-
 /**
  * log successfull operation if WS_DEBUG is activated
  * 
@@ -102,7 +97,7 @@ public class LogIn extends Activity {
  * @param ret
  */
 	private void logInfo(String method_name, Object ret) {
-		if (WS_DEBUG)
-			Log.i(TAG, "reponse " + method_name + " : " + ret.toString());
+		if (Constantes.WS_DEBUG)
+			Log.i(Constantes.TAG, "reponse " + method_name + " : " + ret.toString());
 	}
 }
