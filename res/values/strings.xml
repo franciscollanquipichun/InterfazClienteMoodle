@@ -27,5 +27,7 @@
     <string name="info"></string>
     <color name="textoError">#cc0000</color>
     <color name="textoSuccessful">#00aa00</color>
+    <string name="tv_apellido">Apellido</string>
+    <string name="tv_email">Correo electronico</string>
 
 </resources>

@@ -22,7 +22,7 @@ public class LogIn extends Activity {
 	private Button btn_Login;
 	private EditText et_usr;
 	private EditText et_pwd;
-	private TextView tv_info;
+	private TextView tv_infoUrl;
 	private String Sessionkey = null;
 	private static final int REQUEST_CODE = 10;
 	//login
@@ -34,14 +34,15 @@ public class LogIn extends Activity {
                
         et_usr = (EditText)findViewById(R.id.et_usr);
         et_pwd = (EditText)findViewById(R.id.et_pwd);
-        tv_info =(TextView)findViewById(R.id.tv_info);
+        tv_infoUrl =(TextView)findViewById(R.id.tv_info);
         btn_Login = (Button) findViewById(R.id.btn_login);
+        
+        tv_infoUrl.setText(Constantes.MOODLE_URL);
         //Acción del boton de login btn_Login
         btn_Login.setOnClickListener(new OnClickListener() {			
 			public void onClick(View v) {
 				Constantes.LOGIN=et_usr.getText().toString(); 
 				Constantes.PWD=et_pwd.getText().toString();
-				tv_info.setText(Constantes.MOODLE_URL);
 				if(validarLogin()==true){
 					Toast.makeText(getApplicationContext(), "login correcto", Toast.LENGTH_LONG).show();
 					
