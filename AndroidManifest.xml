@@ -24,6 +24,7 @@
         <activity android:name="RegistrarAlumno"></activity>
         <activity android:name="VerCursos"></activity>
         <activity android:name="VerRecursos"></activity>
+        <activity android:name="MoodleConfig"></activity>
     </application>
 
 </manifest>

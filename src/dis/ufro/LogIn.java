@@ -6,6 +6,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -56,6 +58,14 @@ public class LogIn extends Activity {
 			}
 		});
     }
+/**
+ *  crea menu configuracion de moodle   
+ */
+    public boolean onCreateOptionsMenu(Menu menu){
+    	MenuInflater inflater=getMenuInflater();
+    	inflater.inflate(R.menu.loginmenu, menu);
+    	return true;
+    }    
 /**
  * Valida el usuario y contraseña ingresados
  * @return boolean

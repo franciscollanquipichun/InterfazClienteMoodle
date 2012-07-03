@@ -21,7 +21,7 @@
     <string name="tv_curso">Curso</string>
     <string name="tv_volver">Volver</string>
     <string name="tv_listaDeCursos">Lista de cursos</string>
-    <string name="tv_usr">Usuario</string>
+    <string name="tv_usr">Nombre de usuario</string>
     <string name="tv_pws">Contraseña</string>
     <string name="btn_ingresar">Ingresar</string>
     <string name="info"></string>
@@ -29,5 +29,10 @@
     <color name="textoSuccessful">#00aa00</color>
     <string name="tv_apellido">Apellido</string>
     <string name="tv_email">Correo electronico</string>
+    <string name="menu_btn_configurarMoodle">Configurar Moodle</string>
+    <string name="tv_url_moodle">URL</string>
+    <string name="tv_namespace">NAMESPACE</string>
+    <string name="tv_wsdl_url">WSDL</string>
+    <string name="btn_modificar">Modificar</string>
 
 </resources>
